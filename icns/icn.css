@@ -1,0 +1,120 @@
+ @import url('https://css.gg/loadbar.css');
+ 
+ 
+ .gg-add-r {
+   box-sizing: border-box;
+   position: relative;
+   display: block;
+   width: 22px;
+   height: 22px;
+   border: 2px solid;
+   transform: scale(var(--ggs, 1));
+   border-radius: 4px
+ }
+
+ .gg-add-r::after,
+ .gg-add-r::before {
+   content: "";
+   display: block;
+   box-sizing: border-box;
+   position: absolute;
+   width: 10px;
+   height: 2px;
+   background: currentColor;
+   border-radius: 5px;
+   top: 8px;
+   left: 4px
+ }
+
+ .gg-add-r::after {
+   width: 2px;
+   height: 10px;
+   top: 4px;
+   left: 8px
+ }
+  .gg-block {
+ box-sizing: border-box;
+ position: relative;
+ display: block;
+ transform: scale(var(--ggs,1));
+ width: 16px;
+ height: 16px;
+ border: 2px solid;
+ border-radius: 100%
+}
+
+.gg-block::before {
+ content: "";
+ display: block;
+ box-sizing: border-box;
+ position: absolute;
+ width: 10px;
+ height: 2px;
+ background: currentColor;
+ border-radius: 5px;
+ transform: rotate(-45deg);
+ top: 5px;
+ left: 1px
+} 
+ @keyframes loadbar {
+ 0%,to { left: 0; right: 80% }
+ 25%,75% { left: 0; right: 0 }
+ 50% { left: 80%; right: 0 }
+}
+
+.gg-loadbar,
+.gg-loadbar::before {
+ display: block;
+ box-sizing: border-box;
+ height: 4px
+}
+
+.gg-loadbar {
+ position: relative;
+ transform: scale(var(--ggs,1));
+ width: 18px
+}
+
+.gg-loadbar::before {
+ content: "";
+ position: absolute;
+ border-radius: 4px;
+ background: currentColor;
+ animation: loadbar 2s cubic-bezier(0,0,.58,1) infinite
+} 
+ @keyframes loadbaralt {
+ 0%,to { left: 0; right: 80% }
+ 25%,75% { left: 0; right: 0 }
+ 50% { left: 80%; right: 0 }
+}
+
+.gg-loadbar-alt,
+.gg-loadbar-alt::before,
+.gg-loadbar-alt::after {
+ display: block;
+ box-sizing: border-box;
+ height: 4px;
+ border-radius: 4px
+}
+
+.gg-loadbar-alt {
+ position: relative;
+ transform: scale(var(--ggs,1));
+ width: 18px
+}
+
+.gg-loadbar-alt::after,
+.gg-loadbar-alt::before {
+ background: currentColor;
+ content: "";
+ position: absolute
+}
+
+.gg-loadbar-alt::before {
+ animation: loadbaralt 2s cubic-bezier(0,0,.58,1) infinite
+}
+
+.gg-loadbar-alt::after {
+ width: 18px;
+ opacity: .3
+} 

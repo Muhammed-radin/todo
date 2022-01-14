@@ -1,0 +1,8 @@
+{
+  "run": {
+    "type": "file",
+    "file": "index.html",
+    "ignoreCurrent": true,
+    "url": "https://localhost:7700"
+  }
+}

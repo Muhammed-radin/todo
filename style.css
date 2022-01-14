@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://css.gg/loadbar.css');
+
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  transition: .5s;
+}
+body{
+  margin: 0;
+}
+.bg-notes {
+  background: white;
+  box-shadow: .1px .1px 3px 0px black;
+  height: 40vh;
+  padding: .3rem;
+  border-radius: 2px;
+  margin: .8rem;
+}
+
+hr {
+  background: #4A4A4ADE;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.gg-add-r {
+  padding: .5rem;
+  margin: 1rem;
+  position: absolute;
+  right: .5rem;
+}
+
+.flex p {
+  margin: .5rem;
+}
+
+.bg-pass {
+  background: white;
+  padding: .5rem;
+  margin: 1rem;
+  position: absolute;
+  top: 4rem;
+  z-index: 5;
+  border: 3px solid whitesmoke;
+  border-radius: 3px;
+  left: 20%;
+}
+
+.bg-pass input[type=password] {
+  margin: 1rem;
+  border: 1px solid black;
+  width: 90%;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  animation: inp 2s 1;
+}
+.fa {
+  padding: .4rem;
+  margin: .5rem;
+}
+.fa-cog {
+  position: absolute;
+  right: 3rem;
+  margin-top: .8rem;
+}
+.hover:hover {
+  color: #A2A2A2D4;
+}
+.hover-bg:hover{
+  background: #A2A2A2D4;
+}
+.bg-pass input[type=password]:active {
+  border: 1px solid blue;
+}
+
+.bg-pass button {
+  text-align: center;
+  background: #0066FF;
+  border: 0;
+  padding: .6rem;
+  border-radius: 5px;
+  margin: 1rem;
+  margin-left: 40%;
+}
+
+.bg-pass button:hover {
+  background: #3284FF;
+}
+
+.bg-pass label {
+  margin: .5rem;
+  animation: anim 2s 1;
+}
+
+@keyframes anim {
+  0% {}
+
+  50% {
+    margin-left: 25%;
+  }
+
+  60% {
+    margin-left: 20%;
+  }
+
+  75% {
+    margin-left: 25%;
+  }
+
+  99% {
+    margin-left: 0%;
+  }
+}
+
+.bg-alrtNotfy {
+  background: white;
+  box-shadow: .1px .1px 3px 0px black;
+  border-radius: 5px;
+  position: fixed;
+  top: -10rem;
+  width: 90%;
+  margin: 1rem;
+  padding: .5rem;
+  z-index: 2;
+  animation: downNot 3s 1;
+}
+@keyframes downNot {
+  0%{}
+  10%{
+    top: 0;
+  }
+  50%{
+    top: 0;
+  }
+  80%{
+    top: 0;
+  }
+  90%{
+    top: -10rem;
+  }
+}
+.alrtNotfy {
+  display: flex;
+  flex-direction: row;
+}
+.alrtNotfy a{
+  position: absolute;
+  right: 0;
+  margin: .2rem;
+  /*background: white;*/
+}
+.alrtNotfy center {
+  padding: .3rem;
+  margin: .2rem;
+  max-width: 90%;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+.alrtNotfy i{
+  padding: .3rem;
+  margin: .5rem;
+}
+/*@keyframes inp{
+  0%{
+  
+  }
+  50%{
+    width: 10%;
+  }
+  100%{
+    
+  }
+}*/
+.msg {
+ background: #A6A6A6D1;
+ width: max-content;
+ padding: .8rem;
+ border-radius: 20px;
+ position: fixed;
+ padding-left: 2rem;
+ padding-right: 2rem;
+ top: 80%;
+ left: 50%;
+ z-index: 10;
+}
+@media screen and (max-width: 650px) {
+  .bg-pass {
+    left: 2%;
+  }
+  .msg {
+    left: 40%;
+  }
+}
