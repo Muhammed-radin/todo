@@ -1,4 +1,3 @@
-
 $("body").append('<div id="allScriptHtml"></div>')
 
 
@@ -29,7 +28,7 @@ function alrtNot(msg, color, name, link, icon, sec) {
   $("#allScriptHtml").append(`
       <div class="bg-alrtNotfy">
         <div class="alrtNotfy">
-          <i class="`+icon +` -icons"></i><center>` + msg + `</center><b><a href="` + link + `" style="text-decoration: none">` + name + `</a></b>
+          <i class="` + icon + ` -icons"></i><center>` + msg + `</center><b><a href="` + link + `" style="text-decoration: none">` + name + `</a></b>
         </div>
       </div>
       <style>
@@ -51,7 +50,7 @@ function alrtNot(msg, color, name, link, icon, sec) {
 
 function Msg(msg, color) {
   $('#msg').fadeIn(500)
-    $("#allScriptHtml").append(`
+  $("#allScriptHtml").append(`
       <div class="msg" id="msg">
       <center>` + msg + `</center>
     </div>
@@ -79,55 +78,56 @@ function Msg(msg, color) {
 }
     </style>
   `)
-  $("#msg").fadeOut(2000,() =>{
+  $("#msg").fadeOut(2000, () => {
     $("#msg").remove()
-  } )
-    setInterval(function (){
-      $("#msg").fadeOut(2000, () => {
-        $("#msg").remove()
-      })
-    },100)
+  })
+  setInterval(function() {
+    $("#msg").fadeOut(2000, () => {
+      $("#msg").remove()
+    })
+  }, 100)
 }
 
-
-
-if (localStorage.getItem("saved pass :") ? true : false ){
-  $("#bg-pass").remove()
-}else {
-  Msg('enter your note pass')
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
+let keycode = document.getElementById('keyCode')
 let rfsh = document.getElementById('refresh')
 let pass = document.getElementById('pass')
+
 function smbtPass() {
   if (document.getElementById('pass').value == '') {
     alrtNot('you note typed password', 'white', 'okay', '#pass', 'gg-block', '5s')
-  } else {
+  }
+  else {
+    if (keycode.value == ''){
+    Msg('you note typed key code')
+    alrtNot('key code has empty')
+   }else {
     alrtNot('sumbting...' + ' [' + document.getElementById('pass').value + ']', 'white', '', '#', `gg-loadbar`)
     Msg('sumbited')
-    if (document.getElementById('pss').checked){
-    localStorage.setItem("saved pass :",document.getElementById("pass").value)
-    Msg('saved password')
-        $("#bg-pass").remove()
-  }else {
-    alrtNot('note saved your password','#FF5B5B','check it','#pss','fa fa-info-circle','3s')
-  }
-  }
-  
-}
-setInterval(() => {
     if (document.getElementById('pss').checked) {
-      document.getElementById('keyCode').disabled = false
-            document.getElementById('keyCode').placeholder = 'type keyCode'
-    }else{
-            document.getElementById('keyCode').disabled = true
-                        document.getElementById('keyCode').placeholder = 'key-code or restore code[disabled]'
-    }
-  },10)
+      localStorage.setItem(keycode.value, document.getElementById("pass").value)
+      localStorage.setItem(document.getElementById("pass").value,keycode.value)
+      Msg('saved password')
+      $("#bg-pass").remove()
+
+    } else {
+      alrtNot('note saved your password', '#FF5B5B', 'check it', '#pss', 'fa fa-info-circle', '3s')
+    }}
+  }
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+if (localStorage.getItem(document.getElementById("pass").value) ? true : false) {
+  $("#bg-pass").remove()
+} else {
+  Msg('enter your note pass')
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
