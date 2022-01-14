@@ -97,7 +97,11 @@ if (localStorage.getItem("saved pass :") ? true : false ){
   Msg('enter your note pass')
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+let rfsh = document.getElementById('refresh')
 let pass = document.getElementById('pass')
 function smbtPass() {
   if (document.getElementById('pass').value == '') {
@@ -107,7 +111,6 @@ function smbtPass() {
     Msg('sumbited')
     if (document.getElementById('pss').checked){
     localStorage.setItem("saved pass :",document.getElementById("pass").value)
-    
     Msg('saved password')
         $("#bg-pass").remove()
   }else {
@@ -116,6 +119,18 @@ function smbtPass() {
   }
   
 }
+setInterval(() => {
+    if (document.getElementById('pss').checked) {
+      document.getElementById('keyCode').disabled = false
+            document.getElementById('keyCode').placeholder = 'type keyCode'
+    }else{
+            document.getElementById('keyCode').disabled = true
+                        document.getElementById('keyCode').placeholder = 'key-code or restore code[disabled]'
+    }
+  },10)
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
 //setInterval(function (){
