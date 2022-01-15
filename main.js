@@ -87,7 +87,13 @@ function Msg(msg, color) {
     })
   }, 100)
 }
-
+let sng = document.getElementById('bg-settings')
+settings=() => {
+  
+}
+closeSetting=()=>{
+  sng.style.display = 'none'
+}
 let keycode = document.getElementById('keyCode')
 let rfsh = document.getElementById('refresh')
 let pass = document.getElementById('pass')
@@ -104,8 +110,8 @@ function smbtPass() {
     alrtNot('sumbting...' + ' [' + document.getElementById('pass').value + ']', 'white', '', '#', `gg-loadbar`)
     Msg('sumbited')
     if (document.getElementById('pss').checked) {
-      localStorage.setItem(keycode.value, document.getElementById("pass").value)
-      localStorage.setItem(document.getElementById("pass").value,keycode.value)
+      localStorage.setItem('ps', document.getElementById("pass").value)
+      localStorage.setItem(keycode.value,document.getElementById('pass').value)
       Msg('saved password')
       $("#bg-pass").remove()
 
@@ -122,7 +128,7 @@ function smbtPass() {
 
 
 
-if (localStorage.getItem(document.getElementById("pass").value) ? true : false) {
+if (localStorage.getItem('ps') ? true : false) {
   $("#bg-pass").remove()
 } else {
   Msg('enter your note pass')

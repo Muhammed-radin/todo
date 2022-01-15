@@ -19,9 +19,9 @@
 </head>
 
 <body>
-  <div class="bg-notes">
+  <div class="bg-note">
     <div class="flex">
-      <p class="hover" onclick="window.location.reload()" id="header">notes</p><i class="fa fa-cog hover"></i><i class="gg-add-r hover" id="newNote"></i>
+      <p class="hover" onclick="window.location.reload()" id="header">notes</p><i class="fa fa-cog hover" onclick="settings()"></i><i class="gg-add-r hover" id="newNote"></i>
     </div>
     <hr>
     <div>
@@ -43,6 +43,12 @@
   <div id="allScriptHtml">
     
   </div>
+   <div id="bg-settings">
+     <div id="settings">
+       <b>settings</b><i class="fa fa-times times hover" onclick="closeSetting()"></i>
+       <hr>
+     </div>
+   </div>
   <!-- Project -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="main.js"></script>

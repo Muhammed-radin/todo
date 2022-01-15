@@ -9,15 +9,25 @@
 body{
   margin: 0;
 }
-.bg-notes {
+#bg-settings{
   background: white;
-  box-shadow: .1px .1px 3px 0px black;
-  height: 40vh;
-  padding: .3rem;
-  border-radius: 2px;
-  margin: .8rem;
+  position: fixed;
+  z-index: 10;
+  top: 10%;
+  padding: 1rem;
+  width: 80%;
+  box-shadow: 1px 1px 2px 1px #CFCFCF;
+  border-radius: 5px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-
+.times {
+  position: absolute;
+  right: 0;
+  top: .3rem;
+  margin: .3rem;
+  padding: .3rem;
+}
 hr {
   background: #4A4A4ADE;
 }
