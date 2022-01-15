@@ -1,17 +1,17 @@
 $("body").append('<div id="allScriptHtml"></div>')
 
 
-
+let thm = document.getElementById('thm')
 let ash = "allScriptHtml"
 let asH = document.getElementById("allScriptHtml");
 
 
-function alrtNot(msg, color, name, link, icon, sec) {
+function alrtNot(msg, bgcolor, name, link, icon, sec,color, dark = false,) {
   if (name == undefined) {
     name = 'checknow'
   }
-  if (color == undefined) {
-    color = 'white'
+  if (bgcolor == undefined) {
+    bgcolor = 'white'
   }
   if (msg == undefined) {
     msg = 'you not typed msg'
@@ -33,7 +33,8 @@ function alrtNot(msg, color, name, link, icon, sec) {
       </div>
       <style>
       .bg-alrtNotfy {
-        background: ` + color + `;
+        background: ` + bgcolor + `;
+        color: `+color+`;
         box-shadow: .1 px .1 px 3 px 0 px black;
         border-radius: 5 px;
         position: fixed;
@@ -89,7 +90,7 @@ function Msg(msg, color) {
 }
 let sng = document.getElementById('bg-settings')
 settings=() => {
-  
+    sng.style.display = 'block'
 }
 closeSetting=()=>{
   sng.style.display = 'none'
