@@ -4,12 +4,14 @@
 
 * {
   font-family: 'Montserrat', sans-serif;
-  transition: .5s;
+  transition: .1s;
 }
-body{
+
+body {
   margin: 0;
 }
-#bg-settings{
+
+#bg-settings {
   background: white;
   position: fixed;
   z-index: 10;
@@ -21,6 +23,7 @@ body{
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .times {
   position: absolute;
   right: 0;
@@ -28,6 +31,7 @@ body{
   margin: .3rem;
   padding: .3rem;
 }
+
 hr {
   background: #4A4A4ADE;
 }
@@ -69,21 +73,26 @@ hr {
   font-weight: bold;
   animation: inp 2s 1;
 }
+
 .fa {
   padding: .4rem;
   margin: .5rem;
 }
+
 .fa-cog {
   position: absolute;
   right: 3rem;
   margin-top: .8rem;
 }
+
 .hover:hover {
   color: #A2A2A2D4;
 }
-.hover-bg:hover{
+
+.hover-bg:hover {
   background: #A2A2A2D4;
 }
+
 .bg-pass input[type=password]:active {
   border: 1px solid blue;
 }
@@ -97,7 +106,8 @@ hr {
   margin: 1rem;
   margin-left: 40%;
 }
-.bg-keyPass{
+
+.bg-keyPass {
   background: white;
   width: 90%;
   border-radius: 8px;
@@ -105,9 +115,10 @@ hr {
   margin: .8rem;
   display: flex;
   text-align: center;
-  flex-direction: row; 
+  flex-direction: row;
   box-shadow: 1px 1px 2px 1px #CFCFCF inset;
 }
+
 .refresh {
   margin: .1rem;
   padding: .3rem;
@@ -116,15 +127,19 @@ hr {
   position: absolute;
   right: 10%;
 }
+
 .refresh:disabled {
   color: #BEBEBE;
 }
+
 .disabled {
   color: #BEBEBE;
 }
-#keyPass{
+
+#keyPass {
   margin: .3rem
 }
+
 .bg-pass button:hover {
   background: #3284FF;
 }
@@ -153,13 +168,21 @@ hr {
     margin-left: 0%;
   }
 }
+
 .spin {
-  animation:spin 2s infinite;
+  animation: spin 2s infinite;
 }
-@keyframes spin{
-  0%{transform: rotate(0deg);}
-  100%{transform: rotate(360deg);}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
+
 .bg-alrtNotfy {
   background: white;
   box-shadow: .1px .1px 3px 0px black;
@@ -172,31 +195,39 @@ hr {
   z-index: 2;
   animation: downNot 3s 1;
 }
+
 @keyframes downNot {
-  0%{}
-  10%{
+  0% {}
+
+  10% {
     top: 0;
   }
-  50%{
+
+  50% {
     top: 0;
   }
-  80%{
+
+  80% {
     top: 0;
   }
-  90%{
+
+  90% {
     top: -10rem;
   }
 }
+
 .alrtNotfy {
   display: flex;
   flex-direction: row;
 }
-.alrtNotfy a{
+
+.alrtNotfy a {
   position: absolute;
   right: 0;
   margin: .2rem;
   /*background: white;*/
 }
+
 .alrtNotfy center {
   padding: .3rem;
   margin: .2rem;
@@ -204,10 +235,12 @@ hr {
   word-wrap: break-word;
   overflow: hidden;
 }
-.alrtNotfy i{
+
+.alrtNotfy i {
   padding: .3rem;
   margin: .5rem;
 }
+
 /*@keyframes inp{
   0%{
   
@@ -220,17 +253,18 @@ hr {
   }
 }*/
 .msg {
- background: #A6A6A6D1;
- width: max-content;
- padding: .8rem;
- border-radius: 20px;
- position: fixed;
- padding-left: 2rem;
- padding-right: 2rem;
- top: 80%;
- left: 50%;
- z-index: 10;
+  background: #A6A6A6D1;
+  width: max-content;
+  padding: .8rem;
+  border-radius: 20px;
+  position: fixed;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  top: 80%;
+  left: 50%;
+  z-index: 10;
 }
+
 .input {
   box-shadow: 1px 1px 2px 1px #CFCFCF inset;
   border: 0;
@@ -239,10 +273,86 @@ hr {
   width: 90%;
   margin: .8rem;
 }
+
+.right {
+  position: absolute;
+  right: .5rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  box-shadow: 1px 1px 2px 1px #838383 inset;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  box-shadow: 1px 1px 2px 1px #838383 inset;
+
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: #2196F3;
+  box-shadow: 1px 1px 2px 1px #838383 inset;
+
+}
+
+input:focus+.slider {
+  box-shadow: 1px 1px 2px 1px #838383 inset;
+
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
 @media screen and (max-width: 650px) {
   .bg-pass {
     left: 2%;
   }
+
   .msg {
     left: 40%;
   }

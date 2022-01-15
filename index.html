@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>HTML</title>
-  
+
   <!-- HTML -->
-  
+
 
   <!-- Custom Styles -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -35,25 +36,35 @@
       <br>
       <input type="checkbox" name="" id="pss">
       <span>save password</span>
-      
+
       <input type="number" id="keyCode" placeholder="key-code or restore code[number]" class="input">
       <button type="submit" onclick="smbtPass()" id="smbtPassBtn">sumbit</button>
     </div>
   </div>
   <div id="allScriptHtml">
-    
+
   </div>
-   <div id="bg-settings" style="display: none">
-     <div id="settings">
-       <b>settings</b><i class="fa fa-times times hover" onclick="closeSetting()"></i>
-       <hr>
-     </div>
-   </div>
-   <input type="checkbox" name="" id="thm">
+  <div id="bg-settings" style="display: none">
+    <div id="settings">
+      <b>settings</b><i class="fa fa-times times hover" onclick="closeSetting()"></i>
+      <hr>
+      <span>dark theme</span>
+      <span class="right">
+      <label class="switch">
+        <input type="checkbox" id="thm">
+        <span class="slider round"></span>
+      </label>
+      </span>
+      <p><center><b>-more-features-coming-soon-</b></center></p>
+    </div>
+  </div>
   <!-- Project -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="main.js"></script>
   <script src="src/theme.js"></script>
-  <!script src="src/beomax.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <!script src="src/beomax.js">
+    </script>
 </body>
+
 </html>
