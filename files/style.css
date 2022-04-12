@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  /*border: 1px solid red*/
+}
+
+:root {
+  --color: deeppink;
+}
+
+body {
+  background: #fff;
+  margin: 0;
+  transition: .3s;
+}
+
+
+.icon {
+  color: grey;
+  font-size: 25px;
+  background: transparent;
+  border: 4px
+}
+
+.grey {
+  color: grey;
+}
+
+#menuBtn {
+  background: transparent;
+  border: 4px;
+  margin: .3rem;
+}
+
+.icon {
+  background: transparent;
+  border: 4px;
+}
+
+ion-icon:hover {
+  border: 4px solid #4F5DFFE3;
+  border-radius: 15px;
+}
+
+.left-icons {
+  position: absolute;
+  right: .3rem;
+  top: .3rem;
+}
+
+.m {
+  margin: .5rem;
+}
+
+#home {
+  background: ghostwhite;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  border-radius: 40px;
+  transition: 1s;
+  overflow: scroll;
+}
+
+@keyframes opening {
+  0% {}
+
+  70% {
+    transform: scale(70%, 70%)
+  }
+
+  100% {
+    transform: translate(15rem) scale(70%, 70%);
+  }
+}
+
+.left-bar {
+  position: relative;
+}
+
+ion-icon {
+  font-size: 25px;
+  border: 3px solid transparent;
+  padding: .3rem;
+}
+
+.box {
+  border-radius: 20px;
+  margin: 1rem;
+}
+
+.box h1 {
+  margin: 0;
+}
+
+.bg-box {
+  background: #fff;
+  box-shadow: 2px 2px 10px .3px #cfcfcf;
+  padding: .3rem .5rem;
+  border-radius: 18px;
+}
+
+.small {
+  font-size: 10px;
+}
+
+.categories {
+  width: max-content;
+  padding: .3rem 1rem;
+  margin: .3rem;
+}
+
+.categories * {
+  margin: .5rem;
+}
+
+progress {
+  height: 5px;
+  background-color: #000;
+  border-radius: 10px;
+}
+
+::-webkit-progress-bar {
+  height: 5px;
+  background: #cfcfcf;
+  border-radius: 10px;
+}
+
+::-webkit-progress-value {
+  background: deeppink;
+  box-shadow: .5px .5px 2.5px deeppink
+}
+
+::-moz-progress-bar {
+  height: 5px;
+  background: #cfcfcf;
+  border-radius: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  padding: .3rem;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.clomn {
+  display: flex;
+  flex-direction: clomn;
+  overflow: scroll;
+}
+
+.bg {
+  background: #fff;
+  border-radius: 25px;
+  padding: .7rem 1rem;
+  box-shadow: 2px 2px 10px 1px #cfcfcf
+}
+
+ion-icon[name="add-outline"] {}
+
+#plusBtn {
+  border-radius: 50%;
+  border: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #4F5DFF;
+  color: #fff;
+  text-align: center;
+  padding: 0 0;
+  box-shadow: 2px 2px 10px #4F5DFF;
+  position: absolute;
+  z-index: 9999;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+#plusBtn ion-icon {
+  font-size: 26px
+}
+
+#plusBtn ion-icon:hover {
+  border: none;
+  opacity: 80%
+}
+
+.close-txt {
+  text-decoration: line-through #646464;
+  color: #999999
+}
+
+#menu {
+  position: absolute;
+  left: .5rem;
+  color: #fff;
+  top: 2.4rem;
+  border-radius: 30px;
+  width: 61%;
+  display: none;
+}
+
+#menu button {
+  background: transparent;
+  color: #fff;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  right: .5rem;
+  z-index: 999;
+  top: .5rem;
+}
+
+#menu ion-icon {
+  border: none;
+  padding: 0px;
+}
+
+#menu img {
+  border-radius: 50%;
+  border: 4px solid #4C5BFF;
+  width: 100px;
+  height: 100px;
+}
+
+.profile {
+  margin-top: 3.5rem;
+  margin: 1.8rem;
+}
+
+p {
+  font-size: 12px
+}
+
+.options {
+  margin: 1.8rem;
+}
+
+.options p {
+  font-size: 17px;
+  margin-left: .5rem;
+  font-weight: bold;
+  color: #E9EAFF;
+  position: relative;
+}
+
+.options p:hover {
+  color: #fff;
+}
+
+.options p span {
+  padding: .3rem;
+}
+
+#createTask {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  background: #fff;
+  transition: 1s;
+  border-radius: 40px;
+  animation: startingTasker 1s 1;
+}
+
+@keyframes startingTasker {
+  0% {
+    transform: translate(0, 110%)
+  }
+
+  100% {
+    transform: translate(0, 0%)
+  }
+}
+
+#mgCloseBtn {
+  background: transparent;
+  color: #000;
+  border-radius: 50%;
+  border: 1px solid #CDCDCD;
+  width: 2.5rem;
+  height: 2.5rem;
+  position: absolute;
+  right: 2rem;
+  z-index: 999;
+  top: 2rem;
+  padding: 0;
+}
+
+#taskCreaterInp {
+  border: none;
+  font-size: 20px;
+  outline: none;
+  text-align: start;
+  margin: .5rem;
+  padding: 1.5rem;
+  width: 90%;
+  /*transform: translate(-50%, -50%);
+  top: 45%;
+  position: absolute;*/
+}
+
+.tasker {
+  transform: translate(-50%, -50%);
+  top: 45%;
+  left: 50%;
+  position: fixed;
+}
+
+.tag {
+  border: 1px solid #000;
+  border-radius: 40px;
+  background: transparent;
+  padding: .2rem .5rem;
+  width: 6rem;
+  height: 2rem;
+}
+
+.tag span {
+  font-size: 16px;
+  height: max-content;
+  width: max-content;
+  margin: .2rem;
+}
+
+.tag ion-icon {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tagRd {
+  border: 1px solid #000;
+  border-radius: 40px;
+  background: transparent;
+  padding: .2rem .3rem;
+  width: max-content;
+  height: 2rem;
+  margin-top: .5rem;
+}
+
+.tagRd input {
+  margin: .2rem;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+#addTaskBtn {
+  background: #4F5DFF;
+  color: #fff;
+  border-radius: 20px;
+  border: 1px solid #CDCDCD;
+  width: 9rem;
+  height: 2.5rem;
+  position: absolute;
+  bottom: 2rem;
+  z-index: 999;
+  right: 2rem;
+  padding: 0;
+  /*box-shadow: 2px 2px 10px #4F5DFF;*/
+}
+
+#addTaskBtn span {
+  position: absolute;
+  top: 10px;
+  left: 22px;
+}
+
+#addTaskBtn ion-icon {
+  position: absolute;
+  right: -2px;
+  top: -7px;
+  color: #fff;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: #4F5DFF;
+  width: 2.3rem;
+  height: 2.3rem;
+}
+
+#addTaskBtn ion-icon:hover {
+  border: 2px solid #ccc;
+}
+
+#mgCloseBtn ion-icon {
+  border: none;
+}
+
+.bubble-anim {
+  animation: startingTask 1s 1;
+}
+
+@keyframes startingTask {
+  0% {
+    transform: scale(100%, 100%)
+  }
+
+  50% {
+    transform: scale(70%, 70%)
+  }
+
+  100% {
+    transform: scale(100%, 100%)
+  }
+}
