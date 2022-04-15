@@ -68,7 +68,15 @@
       </div>
       <div class="task-box">
         <p class="grey">TODAY'S TASKS</p>
-        <div id="tasks" class="cloumn"></div>
+        <div id="tasks" class="cloumn">
+          <div class="bg m bubble-anim">
+            <div class="row">
+              <p class="grey small">10/4/22</p>
+              <ion-icon name="trash-outline" id="taskDeleter"></ion-icon>
+            </div>
+            <div class="row"><div class="roundInp" id="colorInp"></div><span>THIS IS DEVELOPMENT MODE</span></div>
+          </div>
+        </div>
       </div>
       <button id="plusBtn">
         <ion-icon name="add-outline"></ion-icon>
@@ -81,17 +89,22 @@
           <input type="text" placeholder="type you task" id="taskCreaterInp">
           <br />
           <div class="row center">
-              <div class="tag m">
-                <ion-icon name="calendar-outline"></ion-icon><span>Today</span>
-              </div>
-              <div class="tagRd"><input type="radio" checked></div>
+            <div class="tag m">
+              <ion-icon name="calendar-outline"></ion-icon><input type="date" name="" id="taskDatePick"><span id="taskDate">Today</span>
+            </div>
+            <div class="tagRd" onclick="colorChange()">
+              <ion-icon name="color-palette-outline"></ion-icon>
+            </div>
           </div>
         </div>
-        <button type="submit" id="addTaskBtn"><span>add Task</span><ion-icon name="chevron-up-outline"></ion-icon></button>
+        <button type="submit" id="addTaskBtn"><span>add Task</span>
+          <ion-icon name="chevron-up-outline"></ion-icon>
+        </button>
       </div>
     </div>
   </div>
   <!-- Project -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="files/main.js"></script>

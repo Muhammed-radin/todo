@@ -1,5 +1,9 @@
 console.log('Hello World!');
 
+$('div').click(() => {
+  $(this).hide()
+})
+
 function el(id) {
   return document.getElementById(id)
 }
@@ -41,18 +45,37 @@ function closeMg() {
 let userTaskInp = el('taskCreaterInp')
 checkTask()
 
+var uuidArr = []
+
 
 function checkTask() {
   if (el('tasks').innerHTML == '') {
     el('tasks').innerHTML = `<center class='grey m' id='noTsk'>no tasks found..!</center>`
   } else {
-    el('noTsk').style.display = 'none'
+    // el('noTsk').style.display = 'none'
   }
 }
 
 var listArr = ['some']
 
-
+function colorChange() {
+  var color = getRandomColor()
+  document.querySelector('.tag').style.color = color
+  document.querySelector('.tagRd').style.color = color
+  
+  return newColor = color
+}
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+function passer(nodes){
+  return nodes;
+}
 el('addTaskBtn').onclick = function() {
   checkTask()
   if (userTaskInp.value == '') {
@@ -60,10 +83,16 @@ el('addTaskBtn').onclick = function() {
   } else {
     el('tasks').innerHTML += `
     <div class="bg m bubble-anim">
-          <p class="grey small">10/4/22</p>
-           <input type="checkbox" name="" id="" class="m" disabled><span>` + userTaskInp.value + `</span>
-    </div>
+            <div class="row">
+              <p class="grey small">10/4/22</p>
+              <ion-icon name="trash-outline" id="taskDeleter"></ion-icon>
+            </div>
+            <input type="checkbox" name="" id="" class="m" disabled><span>` + userTaskInp.value + `</span>
+          </div>
    `;
+    //var givedColor = passer(colorChange());
+   // el('colorInp').style.color = givedColor;
+   // document.querySelector('progress::-webkit-progress-value').style.background = 'red';
     closeMg()
 
     ///////// STORAGE //////////
@@ -94,6 +123,7 @@ el('addTaskBtn').onclick = function() {
   }
 }
 showTasks()
+
 function showTasks() {
   let getStorage = localStorage.getItem('tasks')
   let userData = userTaskInp.value;
@@ -101,9 +131,11 @@ function showTasks() {
   getStorage.forEach((element, index) => {
     el('tasks').innerHTML += `
   <div class="bg m bubble-anim">
-            <p class="grey small">10/4/22</p>
-            <input type="checkbox" name="" id="" class="m" disabled><span>` + element + `</span>
-  </div>
-  `;
+              <div class="row">
+                <p class="grey small">10/4/22</p>
+                <ion-icon name="trash-outline" id="taskDeleter"></ion-icon>
+              </div>
+              <input type="checkbox" name="" id="" class="m" disabled><span>` + element + `</span>
+            </div>`;
   })
 }
