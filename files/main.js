@@ -46,7 +46,15 @@ let userTaskInp = el('taskCreaterInp')
 checkTask()
 
 var uuidArr = []
-
+var listArr = []
+if (localStorage.getItem(1) == 1) {
+  // good
+  showTasks()
+} else {
+  localStorage.setItem('tasks', JSON.stringify(listArr))
+  window.location.reload()
+}
+localStorage.setItem(1, 1)
 
 function checkTask() {
   if (el('tasks').innerHTML == '') {
@@ -56,15 +64,15 @@ function checkTask() {
   }
 }
 
-var listArr = ['some']
 
 function colorChange() {
   var color = getRandomColor()
   document.querySelector('.tag').style.color = color
   document.querySelector('.tagRd').style.color = color
-  
+
   return newColor = color
 }
+
 function getRandomColor() {
   var letters = '0123456789ABCDEF';
   var color = '#';
@@ -73,7 +81,8 @@ function getRandomColor() {
   }
   return color;
 }
-function passer(nodes){
+
+function passer(nodes) {
   return nodes;
 }
 el('addTaskBtn').onclick = function() {
@@ -81,61 +90,50 @@ el('addTaskBtn').onclick = function() {
   if (userTaskInp.value == '') {
     alert('please fill the input')
   } else {
-    el('tasks').innerHTML += `
-    <div class="bg m bubble-anim">
-            <div class="row">
-              <p class="grey small">10/4/22</p>
-              <ion-icon name="trash-outline" id="taskDeleter"></ion-icon>
-            </div>
-            <input type="checkbox" name="" id="" class="m" disabled><span>` + userTaskInp.value + `</span>
-          </div>
-   `;
+    // el('tasks').innerHTML += `
+    // <div class="bg m bubble-anim">
+    //         <div class="row">
+    //           <p class="grey small">10/4/22</p>
+    //           <ion-icon name="trash-outline" id="taskDeleter"></ion-icon>
+    //         </div>
+    //          <input type="checkbox" name="" id="" class="m" disabled><span>` + userTaskInp.value + `</span>
+    //       </div>
+    //`;
     //var givedColor = passer(colorChange());
-   // el('colorInp').style.color = givedColor;
-   // document.querySelector('progress::-webkit-progress-value').style.background = 'red';
+    // el('colorInp').style.color = givedColor;
+    // document.querySelector('progress::-webkit-progress-value').style.background = 'red';
     closeMg()
 
     ///////// STORAGE //////////
+    var getStorage = localStorage.getItem('tasks')
+    var userData = userTaskInp.value;
 
-    let getStorage = localStorage.getItem('tasks')
-    let userData = userTaskInp.value;
 
-    var listArr = []
-    JSON.parse(listArr)
+    //JSON.parse(listArr)
     listArr.push(userData)
-
     localStorage.setItem('tasks', JSON.stringify(listArr))
+    clearTask()
     showTasks()
-
-    function showTasks() {
-      let getStorage = localStorage.getItem('tasks')
-      let userData = userTaskInp.value;
-
-      getStorage.forEach((element, index) => {
-        el('tasks').innerHTML += `
-  <div class="bg m bubble-anim">
-            <p class="grey small">10/4/22</p>
-            <input type="checkbox" name="" id="" class="m"><span>` + element + `</span>
-  </div>
-  `;
-      })
-    }
   }
 }
-showTasks()
+
+function clearTask() {
+  el('tasks').innerHTML = ''
+}
 
 function showTasks() {
-  let getStorage = localStorage.getItem('tasks')
-  let userData = userTaskInp.value;
-
-  getStorage.forEach((element, index) => {
+  getStorage = localStorage.getItem('tasks')
+  userData = userTaskInp.value;
+  i = JSON.parse(getStorage)
+  i.forEach((element, index) => {
     el('tasks').innerHTML += `
   <div class="bg m bubble-anim">
               <div class="row">
                 <p class="grey small">10/4/22</p>
                 <ion-icon name="trash-outline" id="taskDeleter"></ion-icon>
               </div>
-              <input type="checkbox" name="" id="" class="m" disabled><span>` + element + `</span>
-            </div>`;
+              <div class="row"><div class="roundInp" id="colorInp"></div><span>` + element + `</span></div>
+            </div>
+  `;
   })
 }
