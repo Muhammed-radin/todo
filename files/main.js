@@ -1,32 +1,33 @@
 console.log('Hello World!');
 
-$('div').click(() => {
-  $(this).hide()
-})
 
 function el(id) {
   return document.getElementById(id)
 }
-document.getElementById('menuBtn').addEventListener('click', function() {
+document.getElementById('menuBtn').onclick = function() { openMenu() }
+
+function openMenu() {
   //el('home').style.animation = 'opening 2s 1'
   //el('home').style.transform = 'translate(14rem, -3rem)  scale(80%,80%)';
   el('home').style.transform = 'translate(14rem, -3rem)  scale(80%,80%)';
   el('home').style.padding = '2rem .5rem'
   document.body.style.background = '#252D7E';
   el('menu').style.display = 'block'
-})
+}
 
-document.getElementById('menuCloseBtn').addEventListener('click', function() {
+document.getElementById('menuCloseBtn').onclick = function() { menuClose() }
+
+function menuClose() {
   el('home').style.transform = 'translate(0rem, 0rem)  scale(100%,100%)';
   el('home').style.padding = '0rem 0rem'
   el('home').style.borderRadius = '0px'
-  setTimeout(() => {
+  setTimeout(function() {
     document.body.style.background = '#fff'
     el('menu').style.display = 'none'
     el('home').style.borderRadius = '40px'
 
   }, 700)
-})
+}
 
 document.getElementById('plusBtn').addEventListener('click', function() {
   el('createTask').style.transform = 'translate(0%,0%) scale(100%,100%)';
@@ -57,8 +58,8 @@ if (localStorage.getItem(1) == 1) {
 localStorage.setItem(1, 1)
 
 function checkTask() {
-  if (el('tasks').innerHTML == '') {
-    el('tasks').innerHTML = `<center class='grey m' id='noTsk'>no tasks found..!</center>`
+  if (el('tasks').innerHTML == true) {
+    // el('tasks').innerHTML = `<center class='grey m' id='noTsk'>no tasks found..!</center>`
   } else {
     // el('noTsk').style.display = 'none'
   }
@@ -114,6 +115,7 @@ el('addTaskBtn').onclick = function() {
     localStorage.setItem('tasks', JSON.stringify(listArr))
     clearTask()
     showTasks()
+    //setTimeout(()=>{window.location.reload()},3000)
   }
 }
 
@@ -130,10 +132,21 @@ function showTasks() {
   <div class="bg m bubble-anim">
               <div class="row">
                 <p class="grey small">10/4/22</p>
-                <ion-icon name="trash-outline" id="taskDeleter"></ion-icon>
+                <ion-icon name="trash-outline" id="taskDeleter" onclick='removeTask(` + index + `)'></ion-icon>
               </div>
               <div class="row"><div class="roundInp" id="colorInp"></div><span>` + element + `</span></div>
             </div>
   `;
   })
+}
+
+function removeTask(number) {
+  getStorage = localStorage.getItem('tasks')
+  i = JSON.parse(getStorage)
+  console.log(number);
+  i.splice(number,1)
+  localStorage.setItem('tasks',JSON.stringify(i))
+  clearTask()
+  showTasks()
+  console.log(i);
 }
